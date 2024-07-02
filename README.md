@@ -1,7 +1,5 @@
 # ![Laravel Example App]
 
-This repo is functionality complete — PRs and issues welcome!
-
 ----------
 
 # Getting started
