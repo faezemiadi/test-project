@@ -20,7 +20,7 @@ class LoginRegisterController extends Controller
 { 
 
     /**
-     * @bodyParam register required The email of the user. Example: 9
+     * @bodyParam email required The email of the user. Example: 9
      * @bodyParam guard required string must be:client or consultant.
     */
     public function loginRegister(LoginRegisterRequest $request){
@@ -130,16 +130,16 @@ class LoginRegisterController extends Controller
 
     public function checkInputsType($inputs){
 
-         if(filter_var($inputs['register'],FILTER_VALIDATE_EMAIL)){
+         if(filter_var($inputs['email'],FILTER_VALIDATE_EMAIL)){
 
             $modelClass = $inputs['guard'] == 'client' ? 'App\Models\Client':'App\Models\Consultant';
 
-            $user = $modelClass::where('email',$inputs['register'])->first();
+            $user = $modelClass::where('email',$inputs['email'])->first();
 
 
             if(empty($user)){
 
-                $newUser['email'] = $inputs['register'];
+                $newUser['email'] = $inputs['email'];
 
             }
 

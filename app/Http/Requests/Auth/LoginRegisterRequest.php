@@ -28,7 +28,7 @@ class LoginRegisterRequest extends FormRequest
 
             return [
             
-                'register' => 'required|min:11|max:64|email',
+                'email' => 'required|min:11|max:64|email',
                 'guard' => 'required|in:client,consultant',
 
             ];
